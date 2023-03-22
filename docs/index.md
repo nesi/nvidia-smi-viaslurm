@@ -9,7 +9,7 @@ Add the following block to your Slurm script.
 
 !!! info ""
 
-    ```
+    ```bash
     # GPU usage monitoring
     STATS_INTERVAL=5
     STATS_FILE="/path/to/save/the/output/file/${SLURM_JOB_ID}-gpu_stats.csv"
@@ -20,7 +20,11 @@ Add the following block to your Slurm script.
 
 ### Visualising Profile data
 
-```
+Once the job was completed, following python script can be used to visualise the profile data acquired via `nvidia-smi`
+
+* For demonstration purposes, we will the file with profile data **18957616-gpu_stats.csv** and the figure to be generated based on that data **gpu_profile_figure.png**
+
+```py
 #replace 18957616 with the corresponding JobID
 
 import pandas as pd
@@ -30,3 +34,5 @@ dset["sw_thermal_slowdown"] = dset["clocks_throttle_reasons.sw_thermal_slowdown"
 axes = dset.plot(subplots=True, figsize=(15, 10), grid=True)
 axes[0].figure.savefig("gpu_profile_figure.png")
 ```
+
+![image](./images/download.png)
