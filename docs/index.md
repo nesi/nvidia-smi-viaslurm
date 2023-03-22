@@ -49,7 +49,7 @@ For an example,
 
 Once the job was completed, following python script can be used to visualise the profile data acquired via `nvidia-smi`
 
-* For demonstration purposes, we will the file with profile data **18957616-gpu_stats.csv** and the figure to be generated based on that data **gpu_profile_figure.png**
+* For demonstration purposes, we will call the file with profile data **18957616-gpu_stats.csv** and the figure to be generated **gpu_profile_figure.png**
 
 !!! jupyter "Visualise `nvidia-smi` profile data"
 
