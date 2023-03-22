@@ -3,7 +3,7 @@
 
 Add the following block to your Slurm script. 
 
-* `STATS_INTERVAL=5` : This will gather profile data every 5 seconds .i
+* `STATS_INTERVAL=5` : This will gather profile data every 5 seconds 
 * `STATS_FILE` : Make to include a valid path to write the .csv file which contains the profile data
 * `nvidia-smi --query-gpu=` : Most essential variables are `utilization.gpu,utilization.memory,memory.used,memory.total`. Feel free to remove the remainder
 
@@ -23,7 +23,7 @@ For an example,
 !!! terminal "terminal"
 
     ```bash
-    !/bin/bash -e
+    #!/bin/bash -e
     
     #SBATCH --account	        nesi12345
     #SBATCH --job-name	        test-withsmi
