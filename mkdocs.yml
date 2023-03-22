@@ -8,7 +8,6 @@ site_url: "https://genomicsaotearoa.github.io/Introduction-to-R/"
 repo_name:   DininduSenanayake/run-nvidiam-smi-slurmscript 
 repo_url: https://github.com/DininduSenanayake/run-nvidiam-smi-slurmscript.git
 
-
 theme:
   name: material
   logo: ./theme_figures/nesi_ga.png
