@@ -5,7 +5,8 @@ Add the following block to your Slurm script.
 
 * `STATS_INTERVAL=5` : This will gather profile data every 5 seconds 
 * `STATS_FILE` : Make to include a valid path to write the .csv file which contains the profile data
-* `nvidia-smi --query-gpu=` : Most essential variables are `utilization.gpu,utilization.memory,memory.used,memory.total`. Feel free to remove the remainder
+* `nvidia-smi --query-gpu=` : Most essential variables are `utilization.gpu, utilization.memory, memory.used, memory.total`. 
+*  Feel free to remove the remainder
 
 !!! terminal "terminal"
 
@@ -13,8 +14,10 @@ Add the following block to your Slurm script.
     # GPU usage monitoring
     STATS_INTERVAL=5
     STATS_FILE="/path/to/save/the/output/file/${SLURM_JOB_ID}-gpu_stats.csv"
-    nvidia-smi --query-gpu=timestamp,uuid,clocks_throttle_reasons.sw_thermal_slowdown,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw,clocks.current.sm \
-        --format=csv,nounits -l "$STATS_INTERVAL" -f "$STATS_FILE" &
+    nvidia-smi --query gpu=timestamp, uuid, clocks_throttle_reasons.sw_thermal_slowdown, \
+    utilization.gpu, utilization.memory, memory.used, memory.total, temperature.gpu, \
+    power.draw, clocks.current.sm \
+    --format=csv,nounits -l "$STATS_INTERVAL" -f "$STATS_FILE" &
     sleep 20
     ```
 
@@ -38,8 +41,10 @@ For an example,
     
     STATS_INTERVAL=5
     STATS_FILE="/path/to/save/the/output/file/${SLURM_JOB_ID}-gpu_stats.csv"
-    nvidia-smi --query-gpu=timestamp,uuid,clocks_throttle_reasons.sw_thermal_slowdown,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw,clocks.current.sm \
-        --format=csv,nounits -l "$STATS_INTERVAL" -f "$STATS_FILE" &
+    nvidia-smi --query-gpu=timestamp, uuid, clocks_throttle_reasons.sw_thermal_slowdown, \
+    utilization.gpu, utilization.memory, memory.used, memory.total, temperature.gpu, \
+    power.draw,c locks.current.sm \
+    --format=csv,nounits -l "$STATS_INTERVAL" -f "$STATS_FILE" &
     sleep 20#SBATCH --gpus-per-node     A100:1
     
     some commands
