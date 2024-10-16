@@ -17,4 +17,3 @@ jobs:
           destination_branch: "main"
           pr_title: "Automated PR: ${{ github.ref_name }}"
           pr_body: "This is an automated pull request created from branch ${{ github.ref_name }}"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
