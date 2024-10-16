@@ -3,6 +3,7 @@ site_author: Dinindu Senanayake
 site_dir: public
 site_url: "https://dinindusenanayake.github.io/run-nvidiam-smi-slurmscript/"
 
+
 #Repository information
 
 repo_name:   DininduSenanayake/run-nvidiam-smi-slurmscript 
